@@ -18,13 +18,13 @@
 
 local index1, index2
 
-set index1 to 3 -- 1440 x 900 (Best for Retina)
-set index2 to 5 -- 1920 x 1200 (More Space)
+set index1 to 2 -- 1280 x 800 (Best for Retina)
+set index2 to 4 -- 1680 x 1050 (More Space)
 
 tell application "System Preferences"
- activate
-      set the current pane to pane id "com.apple.preference.displays"
-       reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"
+  activate
+  set the current pane to pane id "com.apple.preference.displays"
+  reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"
 end tell
 
 local indexToUse
@@ -35,12 +35,12 @@ tell application "System Events"
     click radio button "Scaled" of radio group 1 of tab group 1
 
     tell tab group 1
-      tell radio group 1 of group 1
+      tell radio group 1 of group 2
         -- Depending on what scale option/index is current selected, set the appropriate new option/index to use
         if (value of radio button index1) is true then
-                  set indexToUse to index2
+          set indexToUse to index2
         else if (value of radio button index2) is true then
-             set indexToUse to index1
+          set indexToUse to index1
         end if
 
         -- Click the radio button for the new scale option/index
@@ -52,6 +52,7 @@ tell application "System Events"
     if indexToUse = 1 then
       click button "OK" of sheet 1
     end if
+
   end tell
 end tell
 
