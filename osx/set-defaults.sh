@@ -219,7 +219,7 @@ defaults write com.apple.dock showhidden -bool true
 #/usr/bin/find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
 # Add iOS Simulator to Launchpad
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications/iOS Simulator.app"
+sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app" "/Applications/iOS Simulator.app"
 
 ###############################################################################
 # Safari & WebKit                                                             #
