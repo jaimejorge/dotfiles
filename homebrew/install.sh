@@ -85,6 +85,7 @@ brew install rename
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
+brew install zsh
 
 # Remove outdated versions from the cellar.
 brew cleanup
