@@ -1,7 +1,8 @@
 git/gitconfig.symlink
 
-# Vim swap files
+# Vim
 *.swp
+.netrwhist
 
 # Compiled Python files
 *.pyc

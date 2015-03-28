@@ -1,9 +1,20 @@
-" Use the Solarized Dark theme
-set background=dark
-colorscheme solarized
-" Use 14pt Monaco
-set guifont=Monaco:h14
-" Don’t blink cursor in normal mode
-set guicursor=n:blinkon0
-" Better line-height
-set linespace=8
+if has("gui_running")
+
+	" Use the Solarized Dark theme
+	set background=dark
+	colorscheme solarized
+
+	if has("gui_macvim")
+		set guifont=Source\ Code\ Pro:h14
+	elseif has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+	elseif has("gui_win32")
+		set guifont=Consolas:h11:cANSI
+	endif
+
+	" Don’t blink cursor in normal mode
+	set guicursor=n:blinkon0
+
+	" Better line-height
+	set linespace=3
+endif

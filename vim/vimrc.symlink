@@ -6,8 +6,6 @@ let g:solarized_termtrans=1
 
 " Make Vim more useful
 set nocompatible
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
@@ -29,7 +27,7 @@ set noeol
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 if exists("&undodir")
-  set undodir=~/.vim/undo
+	set undodir=~/.vim/undo
 endif
 
 " Don’t create backups when editing files in certain directories
@@ -45,14 +43,13 @@ set secure
 set nu
 " Enable syntax highlighting
 syntax on
-" Make tabs as wide as two spaces
+" Make tabs as wide as two spaces by default
 set ts=2
 set sts=2
 set sw=2
-set expandtab
-" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+" Don't turn tabs into spaces by default
+" Let people decide for themselves how wide tabs should be
+set noexpandtab
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -79,17 +76,127 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+" Allow hidden buffers
+set hidden
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+	let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+	if l:tabstop > 0
+		let &l:sts = l:tabstop
+		let &l:ts = l:tabstop
+		let &l:sw = l:tabstop
+	endif
+	call SummarizeTabs()
+endfunction
+function! SummarizeTabs()
+	try
+		echohl ModeMsg
+		echon 'tabstop='.&l:ts
+		echon ' shiftwidth='.&l:sw
+		echon ' softtabstop='.&l:sts
+		if &l:et
+			echon ' expandtab'
+		else
+			echon ' noexpandtab'
+		endif
+	finally
+		echohl None
+	endtry
+endfunction
+
+function! Preserve(command)
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" Do the business:
+	execute a:command
+	" Clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
+endfunction 
+" Strip trailing whitespace
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+" Auto-indent
+nmap <leader>= :call Preserve("normal gg=G")<CR>
 
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-" Automatic commands
-if has("autocmd")
-  " Enable file type detection
-  filetype on
-  " Treat .json files as .js
-  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-  " Treat .md files as Markdown
-  autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+" Spell checking
+if has("spell")
+
+	" Use american english dictionary
+	set spelllang=en_us
+
+	" toggle spelling with F4 key
+	map <leader>s :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+
+	" they were using white on white
+	highlight PmenuSel ctermfg=black ctermbg=lightgray
+
+	" limit it to just the top 10 items
+	set sps=best,10
 endif
 
+" TextMate's indentation key mappings
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
+" Window switching mappings
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Tab switching for mac users (using the 'apple' key)
+map <D-S-]> gt
+map <D-S-[> gT
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+map <D-0> :tablast<CR>
+
+" opening files located in the same directory as the current file
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+
+" Automatic commands
+if has("autocmd")
+	" Enable file type detection
+	filetype on
+	" Treat .json files as .js
+	autocmd BufNewFile,BufRead,BufReadPost *.json set filetype=json syntax=javascript
+	" Treat .rss files as XML
+	autocmd BufNewFile,BufRead,BufReadPost *.rss set filetype=xml
+	" Treat .md files as Markdown
+	autocmd BufNewFile,BufRead,BufReadPost *.txt set filetype=markdown
+	" Treat .txt files as Markdown
+	autocmd BufNewFile,BufRead,BufReadPost *.md set filetype=markdown
+
+	" Syntax of these languages is fussy over tabs Vs spaces
+	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+	" Customisations based on house-style (arbitrary)
+	autocmd FileType markdown setlocal ts=4 sts=4 sw=4 noexpandtab
+endif
