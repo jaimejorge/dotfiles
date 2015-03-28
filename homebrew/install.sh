@@ -75,6 +75,7 @@ brew install xpdf
 brew install xz
 
 # Install other useful binaries.
+brew install exiftool
 brew install git
 brew install hub
 brew install imagemagick --with-webp
