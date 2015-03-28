@@ -81,6 +81,7 @@ brew install hub
 brew install imagemagick --with-webp
 brew install lua
 brew install lynx
+brew install pandoc
 brew install p7zip
 brew install rename
 brew install speedtest_cli
