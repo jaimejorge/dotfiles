@@ -68,7 +68,9 @@ brew install hashpump
 brew install hydra
 brew install john
 brew install knock
+brew tap linode/cli && brew install linode-cli
 brew install nmap
+brew install node
 brew install pngcheck
 brew install socat
 brew install sqlmap
