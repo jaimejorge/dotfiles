@@ -36,6 +36,11 @@ brew install bash-completion
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
+# Ruby stuff
+brew install rbenv
+brew install ruby-build
+brew install rbenv-default-gems
+
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
 brew install homebrew/dupes/grep
