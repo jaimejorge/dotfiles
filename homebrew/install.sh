@@ -86,6 +86,7 @@ brew install exiftool
 brew install git
 brew install hub
 brew install imagemagick --with-webp
+brew install irssi
 brew install lua
 brew install lynx
 brew install pandoc
