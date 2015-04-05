@@ -43,3 +43,6 @@
 [submodule "vim/vim.symlink/bundle/rhubarb"]
 	path = vim/vim.symlink/bundle/rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "vim/vim.symlink/bundle/rbenv"]
+	path = vim/vim.symlink/bundle/rbenv
+	url = https://github.com/tpope/vim-rbenv.git
