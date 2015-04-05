@@ -25,3 +25,6 @@
 [submodule "vim/vim.symlink/bundle/speeddating"]
 	path = vim/vim.symlink/bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "vim/vim.symlink/bundle/git"]
+	path = vim/vim.symlink/bundle/git
+	url = https://github.com/tpope/vim-git.git
