@@ -22,3 +22,6 @@
 [submodule "vim/vim.symlink/bundle/abolish"]
 	path = vim/vim.symlink/bundle/abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/vim.symlink/bundle/speeddating"]
+	path = vim/vim.symlink/bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating.git
