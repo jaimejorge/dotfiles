@@ -29,5 +29,5 @@
 	path = vim/vim.symlink/bundle/git
 	url = https://github.com/tpope/vim-git.git
 [submodule "vim/vim.symlink/bundle/endwise.vim"]
-	path = vim/vim.symlink/bundle/endwise.vim
+	path = vim/vim.symlink/bundle/endwise
 	url = https://github.com/tpope/vim-endwise.git
