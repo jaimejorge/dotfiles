@@ -16,3 +16,6 @@
 [submodule "vim/vim.symlink/bundle/bundler"]
 	path = vim/vim.symlink/bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git
+[submodule "vim/vim.symlink/bundle/eunuch"]
+	path = vim/vim.symlink/bundle/eunuch
+	url = https://github.com/tpope/vim-eunuch.git
