@@ -46,3 +46,6 @@
 [submodule "vim/vim.symlink/bundle/rbenv"]
 	path = vim/vim.symlink/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
+[submodule "vim/vim.symlink/bundle/emmet"]
+	path = vim/vim.symlink/bundle/emmet
+	url = https://github.com/mattn/emmet-vim.git
