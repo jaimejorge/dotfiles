@@ -22,3 +22,8 @@ Thumbs.db
 # NVM
 nvm/nvm.symlink/src
 nvm/nvm.symlink/versions
+
+# RBENV
+rbenv/rbenv.symlink/shims
+rbenv/rbenv.symlink/version
+rbenv/rbenv.symlink/versions
