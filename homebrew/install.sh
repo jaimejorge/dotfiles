@@ -70,7 +70,6 @@ brew install john
 brew install knock
 brew tap linode/cli && brew install linode-cli
 brew install nmap
-brew install node
 brew install pngcheck
 brew install socat
 brew install sqlmap
@@ -96,6 +95,8 @@ brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
 brew install zsh
+brew install nvm
+mkdir ~/.nvm
 
 # Remove outdated versions from the cellar.
 brew cleanup
