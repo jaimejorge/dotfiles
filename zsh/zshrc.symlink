@@ -1,7 +1,7 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-# your project folder that we can `s [tab]` to
+# your project folder that we can `c [tab]` to
 export PROJECTS=~/Sites
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
