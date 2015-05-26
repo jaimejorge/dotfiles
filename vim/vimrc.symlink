@@ -49,7 +49,7 @@ set sts=2
 set sw=2
 " Don't turn tabs into spaces by default
 " Let people decide for themselves how wide tabs should be
-set noexpandtab
+set expandtab
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -199,5 +199,4 @@ if has("autocmd")
 
 	" Customisations based on house-style (arbitrary)
 	autocmd FileType markdown setlocal ts=4 sts=4 sw=4 noexpandtab
-	autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 endif
