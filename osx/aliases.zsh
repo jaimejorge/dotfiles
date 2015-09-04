@@ -1,8 +1,11 @@
 # Various software updates on OS X
-alias update='sudo softwareupdate -i -a;brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g;cd ~/Documents/Computer\ Science/Software;/usr/bin/find ~/Documents/Computer\ Science/Software -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;;cd -'
+alias update='brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g;cd ~/Documents/Computer\ Science/Software;/usr/bin/find ~/Documents/Computer\ Science/Software -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;;cd -'
 
 # Move iFlicks 2 output to iTunes
 alias iflicks='mv ~/Movies/iFlicks\ 2/* ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/'
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -17,7 +20,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes/*; sudo rm -rfv ~/.Trash/*; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
