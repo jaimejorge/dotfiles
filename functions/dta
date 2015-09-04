@@ -1,7 +1,7 @@
 # Usage: dta <url>
 # Description: rip images from a 4chan board
 dta() {
-	wget -O - $1 |
+	wget --no-check-certificate -O - $1 |
 	grep -Eo 'i.4cdn.org/[^"]+' |
 	uniq |
 	xargs wget
