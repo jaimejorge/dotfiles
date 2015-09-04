@@ -1,7 +1,7 @@
 if has("gui_running")
 
 	" Use the Solarized Dark theme
-	set background=light
+	set background=dark
 	colorscheme solarized
 
 	if has("gui_macvim")
