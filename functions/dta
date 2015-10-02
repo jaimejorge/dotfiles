@@ -1,11 +1,11 @@
 # Usage: dta <url>
 # Description: rip images from a 4chan board
 dta() {
-	wget --no-check-certificate -O - $1 |
+	wget -nc --no-check-certificate -O - $1 |
 	grep -Eo 'i.4cdn.org/[^"]+' |
 	uniq |
 	xargs wget
 	# remove dupes and thumbnails
-	rm *.1
-	rm *s.jpg
+	mv *.1 ~/.Trash
+  mv *s.jpg ~/.Trash
 }
