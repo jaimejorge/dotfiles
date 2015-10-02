@@ -3,6 +3,7 @@ git/gitconfig.symlink
 # Vim
 *.swp
 .netrwhist
+vim/vim.symlink/swaps
 
 # Compiled Python files
 *.pyc
