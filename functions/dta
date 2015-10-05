@@ -1,11 +1,24 @@
 # Usage: dta <url>
 # Description: rip images from a 4chan board
 dta() {
+  # 1. mkdir 2494274-chloe from https://boards.4chan.org/hr/thread/2494274/chloe, ignore errors
+  local directory_name=$(echo $1 | grep -Eo '\d+\/(\w|-)+' | sed 's/\//-/g')
+  mkdir $directory_name
+  # 2. cd 2494274-chloe
+  cd $directory_name
+  # 3. download them all:
 	wget -nc --no-check-certificate -O - $1 |
 	grep -Eo 'i.4cdn.org/[^"]+' |
 	uniq |
 	xargs wget
-	# remove dupes and thumbnails
+	# 4. remove dupes and thumbnails
 	mv *.1 ~/.Trash
   mv *s.jpg ~/.Trash
+  # 5. return to parent directory
+  cd ..
 }
+
+# TODO
+# convert PNG to JPG with flag
+# run through lossless optimizer (or even lossy optimizer?)
+# get all links from board and whitelist the ones you want to track? That requires a database
