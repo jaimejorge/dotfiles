@@ -3,10 +3,10 @@
 dta() {
   # 1. mkdir & cd
   local directory_name=$(echo $1 | grep -Eo '\d+\/(\w|-)+' | sed 's/\//-/g')
-  mkdir $directory_name
+  mkdir -p $directory_name
   cd $directory_name
   # 2. download them all:
-	wget -nc --no-check-certificate -O - $1 |
+	wget --quiet --show-progress -nc --no-check-certificate -O - $1 |
 	grep -Eo 'i\.4cdn\.org\/\w*/\d*\.\w*[^"]+' |
 	uniq |
 	xargs wget -nc
