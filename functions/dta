@@ -6,10 +6,10 @@ dta() {
   mkdir -p $directory_name
   cd $directory_name
   # 2. download them all:
-	wget --quiet --show-progress -nc --no-check-certificate -O - $1 |
+	wget --quiet --show-progress --no-check-certificate -O - $1 |
 	grep -Eo 'i\.4cdn\.org\/\w*/\d*\.\w*[^"]+' |
 	uniq |
-	xargs wget -nc
+	xargs wget --quiet --show-progress -nc
   # 3. return to parent directory
   cd ..
 }
