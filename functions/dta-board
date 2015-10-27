@@ -1,0 +1,14 @@
+#!/bin/bash
+. ~/.dotfiles/functions/dta
+
+# Accept text file as argument, otherwise default to `inbox.txt`
+DEFAULT_FILE="inbox.txt"
+FILE=${1:-$DEFAULT_FILE}
+
+# TODO
+# * Test that $1 exists
+# * $1 should be a new line-separated list of URLs to 4chan boards
+
+while IFS= read -ru 3 LINE; do
+  dta $LINE
+done 3< "$FILE"
