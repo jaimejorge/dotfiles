@@ -1,7 +1,4 @@
 # malek does dotfiles
-*forked from [holman/dotfiles](https://github.com/holman/dotfiles)*
-
-## dotfiles
 
 This set of dotfiles uses a topic-centric, modular approach, splitting content up into topics (like Ruby, Git, system libraries, and so on). It's easy to take out a module if you don't use it, or add one in to fill a gap.
 
