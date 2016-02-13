@@ -19,12 +19,3 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
-
-# NVM
-nvm/nvm.symlink/src
-nvm/nvm.symlink/versions
-
-# RBENV
-rbenv/rbenv.symlink/shims
-rbenv/rbenv.symlink/version
-rbenv/rbenv.symlink/versions
