@@ -19,17 +19,12 @@ brew 'bash-completion'
 # Install `wget` with IRI support.
 brew 'wget', args: ['with-iri']
 
-# Ruby stuff
-brew 'rbenv'
-brew 'ruby-build'
-brew 'rbenv-default-gems'
-
 # Install more recent versions of some OS X tools.
 brew 'vim', args: ['override-system-vi']
 brew 'homebrew/dupes/grep'
 brew 'homebrew/dupes/openssh'
 brew 'homebrew/dupes/screen'
-brew 'homebrew/php/php56', args: ['with-gmp']
+brew 'homebrew/php/php70', args: ['with-gmp']
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -79,7 +74,6 @@ brew 'ssh-copy-id'
 brew 'testssl'
 brew 'tree'
 brew 'zsh'
-brew 'nvm'
 
 brew cleanup
 
