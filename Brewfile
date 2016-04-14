@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
 # Install GNU core utilities (those that come with OS X are outdated).
@@ -73,6 +72,9 @@ brew 'speedtest_cli'
 brew 'ssh-copy-id'
 brew 'testssl'
 brew 'tree'
+brew 'vbindiff'
+brew 'webkit2png'
+brew 'zopfli'
 brew 'zsh'
 
 brew cleanup
@@ -81,7 +83,6 @@ cask 'adium'
 cask 'firefox'
 cask 'google-chrome'
 cask 'handbrake'
-cask 'mapbox-studio'
 cask 'slack'
 cask 'steam'
 cask 'transmission'
