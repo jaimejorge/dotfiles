@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
 # Install GNU core utilities (those that come with OS X are outdated).
