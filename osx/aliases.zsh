@@ -1,5 +1,5 @@
 # Various software updates on OS X
-alias update='brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g;cd ~/Documents/Projects;/usr/bin/find ~/Documents/Projects -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;;cd -;cd ~/Documents/Software;/usr/bin/find ~/Documents/Software -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;;cd -'
+alias update='brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g;cd ~/Documents/Software;/usr/bin/find ~/Documents/Software -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;;cd -'
 
 # Move iFlicks 2 output to iTunes
 alias iflicks='mv ~/Movies/iFlicks\ 2/* ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/'
