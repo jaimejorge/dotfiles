@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 . ~/.dotfiles/functions/dta
 
 # Accept text file as argument, otherwise default to `inbox.txt`
