@@ -7,7 +7,7 @@ then
   alias l="gls -lAh --color"
   alias ll="gls -l --color"
   alias la="gls -A --color"
-else # OS X `ls`
+else # macOS `ls`
   alias ls="ls -F -G"
   alias l="ls -lAh -G"
   alias ll="ls -l -G"

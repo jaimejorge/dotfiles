@@ -1,4 +1,4 @@
-# Various software updates on OS X
+# Various software updates on macOS
 alias update='brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g;cd ~/Documents/Software;/usr/bin/find ~/Documents/Software -maxdepth 1 -type d -print -execdir git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;;cd -'
 
 # Move iFlicks 2 output to iTunes

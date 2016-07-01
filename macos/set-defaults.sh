@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Sets reasonable OS X defaults.
+# Sets reasonable macOS defaults.
 #
-# Or, in other words, set shit how I like in OS X.
+# Or, in other words, set shit how I like in macOS.
 #
 # Shamelessly stolen from:
 #   https://mths.be/osx
