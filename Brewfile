@@ -2,7 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
-# Install GNU core utilities (those that come with OS X are outdated).
+# Install GNU core utilities (those that come with macOS are outdated).
 brew 'coreutils'
 # Install some other useful utilities like `sponge`.
 brew 'moreutils'
@@ -18,7 +18,7 @@ brew 'bash-completion'
 # Install `wget` with IRI support.
 brew 'wget', args: ['with-iri']
 
-# Install more recent versions of some OS X tools.
+# Install more recent versions of some macOS tools.
 brew 'vim', args: ['override-system-vi']
 brew 'homebrew/dupes/grep'
 brew 'homebrew/dupes/openssh'
