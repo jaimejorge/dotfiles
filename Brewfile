@@ -8,7 +8,7 @@ brew 'coreutils', args: ['with-gmp']
 # Install some other useful utilities like `sponge`.
 brew 'moreutils'
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew 'findutils'
+brew 'findutils', args: ['with-default-names']
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew 'gnu-sed', args: ['with-default-names']
 
