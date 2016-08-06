@@ -150,13 +150,10 @@ endif
 " Avoid the escape key
 " See http://vim.wikia.com/wiki/Avoid_the_escape_key
 imap jk <esc>
-nnoremap jk <esc>
 
 " Avoid the shift key
 nnoremap ; :
-nnoremap : ;
 vnoremap ; :
-vnoremap : ;
 
 " TextMate's indentation key mappings
 nmap <D-[> <<
