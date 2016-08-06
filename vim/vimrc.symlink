@@ -190,10 +190,16 @@ map <leader>et :tabe %%
 
 " Automatic commands
 
-augroup markdown
+aug uncomment
+  au!
+  au BufNewFile,BufRead * setlocal formatoptions-=ro
+aug END
+
+" Treat txt, md, markdown as GitHub-flavored markdown
+aug markdown
   au!
   au BufNewFile,BufRead *.md,*.markdown,*.txt setlocal filetype=ghmarkdown
-augroup END
+aug END
 
 if has("autocmd")
 	" Enable file type detection
