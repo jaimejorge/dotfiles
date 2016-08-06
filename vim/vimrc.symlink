@@ -189,6 +189,12 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
 " Automatic commands
+
+augroup markdown
+  au!
+  au BufNewFile,BufRead *.md,*.markdown,*.txt setlocal filetype=ghmarkdown
+augroup END
+
 if has("autocmd")
 	" Enable file type detection
 	filetype on
@@ -196,10 +202,6 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead,BufReadPost *.json set filetype=json syntax=javascript
 	" Treat .rss files as XML
 	autocmd BufNewFile,BufRead,BufReadPost *.rss set filetype=xml
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead,BufReadPost *.txt set filetype=markdown
-	" Treat .txt files as Markdown
-	autocmd BufNewFile,BufRead,BufReadPost *.md set filetype=markdown
 
 	" Syntax of these languages is fussy over tabs Vs spaces
 	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
