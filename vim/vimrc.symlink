@@ -150,13 +150,10 @@ endif
 " Avoid the escape key
 " See http://vim.wikia.com/wiki/Avoid_the_escape_key
 imap jk <esc>
-nnoremap jk <esc>
 
 " Avoid the shift key
 nnoremap ; :
-nnoremap : ;
 vnoremap ; :
-vnoremap : ;
 
 " TextMate's indentation key mappings
 nmap <D-[> <<
@@ -192,22 +189,31 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
 " Automatic commands
+
+" Don't auto-prepend a comment after a comment on new lines
+aug uncomment
+  au!
+  au BufNewFile,BufRead * setlocal formatoptions-=ro
+aug END
+
+" Treat txt, md, markdown as markdown
+aug markdown
+  au!
+  au BufNewFile,BufReadPost *.md,*.markdown,*.txt set filetype=markdown
+aug END
+
 if has("autocmd")
 	" Enable file type detection
 	filetype on
 	" Treat .json files as .js
-	autocmd BufNewFile,BufRead,BufReadPost *.json set filetype=json syntax=javascript
+	au BufNewFile,BufRead,BufReadPost *.json set filetype=json syntax=javascript
 	" Treat .rss files as XML
-	autocmd BufNewFile,BufRead,BufReadPost *.rss set filetype=xml
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead,BufReadPost *.txt set filetype=markdown
-	" Treat .txt files as Markdown
-	autocmd BufNewFile,BufRead,BufReadPost *.md set filetype=markdown
+	au BufNewFile,BufRead,BufReadPost *.rss set filetype=xml
 
 	" Syntax of these languages is fussy over tabs Vs spaces
-	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+	au FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+	au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 	" Customisations based on house-style (arbitrary)
-	autocmd FileType markdown setlocal ts=4 sts=4 sw=4 noexpandtab
+	au FileType markdown setlocal ts=4 sts=4 sw=4 noexpandtab
 endif
