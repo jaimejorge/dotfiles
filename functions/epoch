@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+# Set file's metadata dates to epoch (Jan 1 1970 00:00 UTC)
+echo "Setting epoch in "$(pwd)
+exiftool -r -AllDates="1969-12-31 18:00:00-06:00" -FileModifyDate="1969-12-31 18:00:00-06:00" .;find . -type f -name '*_original' -delete
