@@ -55,3 +55,6 @@
 [submodule "vim/vim.symlink/bundle/dash.vim"]
 	path = vim/vim.symlink/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/vim.symlink/bundle/gtm"]
+	path = vim/vim.symlink/bundle/gtm
+	url = https://github.com/git-time-metric/gtm-vim-plugin.git
