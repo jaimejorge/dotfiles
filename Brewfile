@@ -87,6 +87,8 @@ brew 'fswatch'
 brew 'git'
 brew 'git-lfs'
 brew 'gpac'
+tap 'git-time-metric/gtm'
+brew 'gtm'
 brew 'htop'
 brew 'hub'
 brew 'imagemagick', args: ['with-webp']
