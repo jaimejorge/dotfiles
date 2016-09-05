@@ -1,5 +1,5 @@
 # Various software updates on macOS
-alias update='brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g'
+alias update='brew update;brew upgrade --all;gem update --system;gem update;npm install npm -g;npm update -g;brew cleanup;brew cask cleanup;gem cleanup'
 
 # Move iFlicks 2 output to iTunes
 alias iflicks='mv ~/Movies/iFlicks\ 2/* ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/'
